@@ -1,0 +1,42 @@
+<h1>Dashboard</h1>
+<h4>Welcome, {{fName}}!</h4>
+
+{{#if stories}}
+<table class="striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#each stories}}
+        <tr>
+            {{!-- We can add get request paths inside href but not delete/put paths --}}
+            {{!-- For delete and edit paths, we will use method override --}}
+            <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;"><a
+                    href="/stories/{{_id}}">{{title}}</a></td>
+            <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+            <td><span class="dash-status">{{status}}</span></td>
+            <td style="display: flex; justify-content: space-around;">
+                <form action="/stories/delete/{{_id}}?_method=DELETE" method="POST">
+                    <button type="submit">
+                        <i class="fas fa-trash" style="color: red"></i>
+                    </button>
+                </form>
+                <div>
+                    <button>
+                        <a href="/stories/edit/{{_id}}"><i class="far fa-edit" style="color: skyblue;"></i></a>
+                    </button>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p>No stories available.</p>
+{{/if}}

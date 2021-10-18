@@ -1,0 +1,11 @@
+<h1>Stories for {{single.user.displayName}}</h1>
+
+{{#each userStories}}
+<div class="card">
+    <h4>{{title}}</h4>
+    <h4>{{body}}</h4>
+    <h4>{{status}}</h4>
+</div>
+{{else}}
+<p>User has no stories.</p>
+{{/each}}

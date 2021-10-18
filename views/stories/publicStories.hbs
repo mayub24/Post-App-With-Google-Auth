@@ -1,0 +1,66 @@
+<h1>Your Posts</h1>
+
+<div class="row">
+    {{!-- GET LOGGED IN USER STORIES HERE --}}
+    {{#each logged}}
+
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-img">
+                {{{editIcon user._id ../user _id}}}
+            </div>
+            <div class="card-content center-align">
+                <h5 class="truncate">{{title}}</h5>
+                <p class="truncate">{{removeTags body}}</p>
+                <br>
+                <div class="chip">
+                    <img src="{{user.image}}" alt="">
+                    <a href="/stories/user/{{user._id}}">{{user.displayName}}</a>
+                </div>
+            </div>
+            <div class="card-action center-align">
+                <a href="/stories/{{_id}}" class="btn grey">Read More</a>
+            </div>
+        </div>
+    </div>
+
+    {{else}}
+    No stories.
+
+    {{/each}}
+
+</div>
+
+{{!-- GET OTHER USERS PUBLIC STORIES HERE --}}
+
+<h2>Posts by other Users</h2>
+
+
+<div class="row">
+    {{#each otherUsers}}
+
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-img">
+                {{{editIcon user._id ../user _id}}}
+            </div>
+            <div class="card-content center-align">
+                <h5 class="truncate">{{title}}</h5>
+                <p class="truncate">{{removeTags body}}</p>
+                <br>
+                <div class="chip">
+                    <img src="{{user.image}}" alt="">
+                    <a href="/stories/user/{{user._id}}">{{user.displayName}}</a>
+                </div>
+            </div>
+            <div class="card-action center-align">
+                <a href="/stories/{{_id}}" class="btn grey">Read More</a>
+            </div>
+        </div>
+    </div>
+
+    {{else}}
+    No stories by other users.
+
+    {{/each}}
+</div>
