@@ -80,12 +80,6 @@ app.use('/auth/google', auth);
 app.use('/stories', stories);
 
 
-// morgan console logs the type of request being made
-if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('dev'));
-}
-
-
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
