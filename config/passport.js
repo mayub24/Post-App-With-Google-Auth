@@ -7,8 +7,8 @@ module.exports = async (passport) => {
     passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: "/auth/google/callback"
-        // callbackURL: "https://poster-app-google-auth.herokuapp.com/auth/google/callback"
+        callbackURL: "https://google-auth-app.onrender.com/auth/google/callback"
+        // https://dashboard.render.com/web/srv-clnqmkrj65ls7389mv1g/deploys/dep-clnsu9v5felc739vful0
     },
         async (accessToken, refreshToken, profile, doneLoading) => {
             const newUser = {
