@@ -10,14 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "connect-mongo": "^4.6.0",
+    "connect-mongo": "^5.1.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
     "method-override": "^3.0.0",
     "moment": "^2.29.1",
-    "mongoose": "^6.0.10",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.2",
     "morgan": "^1.10.0",
     "passport": "^0.5.0",
     "passport-google-oauth20": "^2.0.0"

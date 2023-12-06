@@ -27,12 +27,13 @@ router.get('/', giveGuest, async (req, res) => {
             .lean();
 
         allPublicStories.forEach((each) => {
-            if (each.user._id == req.user.id) {
-                loggedArr.push(each);
-            }
-            else {
-                otherUsersArr.push(each);
-            }
+        console.log(each.body);
+            // if (each.user == req.user) {
+            //     loggedArr.push(each);
+            // }
+            // else {
+            //     otherUsersArr.push(each);
+            // }
         })
 
 
