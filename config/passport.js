@@ -7,7 +7,7 @@ module.exports = async (passport) => {
     passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: "https://google-auth-app.onrender.com/auth/google/callback"
+        callbackURL: "https://post-app-google-auth.up.railway.app/auth/google/callbackauth/google/callback"
         // https://dashboard.render.com/web/srv-clnqmkrj65ls7389mv1g/deploys/dep-clnsu9v5felc739vful0
     },
         async (accessToken, refreshToken, profile, doneLoading) => {
